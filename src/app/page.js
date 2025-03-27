@@ -1,102 +1,166 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect, useState } from 'react';
+// import { Plane, Phone, Mail, MapPin, Star, ChevronDown, Menu, X, Contact } from 'lucide-react';
+import { GiOctogonalEye } from "react-icons/gi";
+import { LiaUmbrellaBeachSolid } from "react-icons/lia";
+import { PiMountains } from "react-icons/pi";
+import destination from '../../Components/Destinations';
+import { MdLocationOn } from "react-icons/md";
+import Services from '../../Components/Services';
+import Navbar from '../../Components/Navbar';
+import TestimonialSection from '../../Components/TestimonialSection';
+import FlightBookingForm from '../../Components/FlightBookingForm';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen bg-white text-gray-200">
+      {/* Navigation */}
+    <Navbar/>
+
+      {/* Hero Section */}
+      {/* <section id="home" className="pt-20 pb-12 bg-gradient-to-r from-blue-50 to-indigo-50"> */}
+      <section id="home" className="pt-20 pb-12 h-screen ">
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/videowalla.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10   absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Explore the World with <span className="text-orange-500">Locus Tours</span>
+            </h1>
+            <p className="text-xl text-white mb-8">
+              Your trusted partner for domestic and international travel
+            </p>
+          </div>
+
+          {/* Flight Booking Form */}
+          <FlightBookingForm/>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Services Section */}
+     <Services/>
+
+      {/* Unforgettable Experiences */}
+      <section className="bg-white md:px-6 py-10" id="experiences">
+  <div>
+    <h1 className="text-center text-gray-700 text-3xl font-bold">Unforgettable Experiences</h1>
+
+    {/* Carousel Wrapper */}
+    <div className="w-full relative overflow-hidden py-10 ">
+    <div className="flex gap-5 justify-start md:justify-center items-center overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide p-4">
+        
+        {/* Beach Gateways */}
+        <div className="w-52 md:w-72 flex-shrink-0 snap-start relative group cursor-pointer hover:scale-105 duration-300  ">
+          <img src="/efoto2.jpeg" className="rounded-2xl w-full" alt="Beach" />
+          <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white p-2 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <LiaUmbrellaBeachSolid className="text-2xl mb-3 text-yellow-600" />
+            <h2 className="font-bold">Beach Gateways</h2>
+            <p className="italic text-sm">A tranquil escape where the ocean meets the land...</p>
+          </div>
+        </div>
+
+        {/* Cultural Experiences */}
+        <div className="w-52 md:w-72 flex-shrink-0 snap-start relative group cursor-pointer hover:scale-105 duration-300">
+          <img src="/efoto4.jpeg" className="rounded-2xl w-full" alt="Culture" />
+          <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white p-2 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <GiOctogonalEye className="text-2xl mb-3" />
+            <h2 className="font-bold">Cultural Experiences</h2>
+            <p className="italic text-sm">Indian culture is a vibrant blend of traditions, festivals...</p>
+          </div>
+        </div>
+
+        {/* Mountain Adventures */}
+        <div className="w-52 md:w-72 flex-shrink-0 snap-start relative group cursor-pointer hover:scale-105 duration-300">
+          <img src="/efoto3.jpeg" className="rounded-2xl w-full" alt="Mountain" />
+          <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white p-2 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <PiMountains className="text-2xl mb-3 text-green-700" />
+            <h2 className="font-bold">Mountain Adventures</h2>
+            <p className="italic text-sm">A mountain is a majestic natural wonder...</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      {/* Popular Destinations  */}
+        <section>
+                <div className='py-10 text-gray-700' >
+                  <h1 className='text-3xl text-center text-gray-700 font-bold'>Popular Destinations</h1>
+                  <div className=' p-10 flex gap-4 flex-wrap justify-center '>
+                  {destination.map((place, index) => (
+        <div key={index} className=" rounded-lg overflow-hidden shadow-lg w-70 hover:scale-103 duration-200 cursor-pointer">
+          <img src={place.image} alt={place.place} className="w-full h-64 object-cover" loading="lazy" />
+          <div className="p-4 ">
+            <h2 className="text-xl font-semibold">{place.place}</h2>
+            <p className="text-gray-600 flex items-center italic"> <MdLocationOn className='text-red-600' />{place.location}</p>
+            <p className="text-green-500 font-bold">{place.price}</p>
+          </div>
+        </div>
+      ))}
+                    
+                  </div>
+                </div>
+
+        </section>
+
+
+
+
+
+      {/* Testimonials Section */}
+      <TestimonialSection/>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Locus Tours</h3>
+              <p className="text-gray-400">Your trusted travel partner since 2024</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li><a href="#home" className="text-gray-400 hover:text-white">Home</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white">Services</a></li>
+                <li><a href="#testimonials" className="text-gray-400 hover:text-white">Testimonials</a></li>
+                <li><a href="#contact" className="text-gray-400 hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Services</h3>
+              <ul className="space-y-2">
+                <li className="text-gray-400">Domestic Flights</li>
+                <li className="text-gray-400">International Flights</li>
+                <li className="text-gray-400">Travel Packages</li>
+                <li className="text-gray-400">Travel Insurance</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white">Facebook</a>
+                <a href="#" className="text-gray-400 hover:text-white">Twitter</a>
+                <a href="#" className="text-gray-400 hover:text-white">Instagram</a>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-800 text-center">
+            <p className="text-gray-400">&copy; 2024 Locus Tours. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
