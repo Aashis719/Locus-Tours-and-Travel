@@ -11,6 +11,8 @@ import Services from '../../Components/Services';
 import Navbar from '../../Components/Navbar';
 import TestimonialSection from '../../Components/TestimonialSection';
 import FlightBookingForm from '../../Components/FlightBookingForm';
+import { FaSearch } from 'react-icons/fa';
+import SearchBox from '../../Components/SearchBox'; 
 
 export default function Home() {
 
@@ -32,7 +34,7 @@ export default function Home() {
         <source src="/videowalla.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10   absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:pt-10   absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Explore the World with <span className="text-orange-500">Locus Tours</span>
@@ -43,7 +45,9 @@ export default function Home() {
           </div>
 
           {/* Flight Booking Form */}
-          <FlightBookingForm/>
+          {/* <FlightBookingForm/> */}
+         <SearchBox/>
+
         </div>
       </section>
 
@@ -115,10 +119,6 @@ export default function Home() {
                 </div>
 
         </section>
-
-
-
-
 
       {/* Testimonials Section */}
       <TestimonialSection/>
