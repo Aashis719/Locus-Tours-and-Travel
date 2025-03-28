@@ -4,6 +4,8 @@ import { Suspense } from 'react';
 import { MdLocationOn } from 'react-icons/md';
 import destinations from '@/app/search/Destination'; // ✅ Ensure correct import path
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import { FaArrowRightFromBracket } from 'react-icons/fa6';
 
 const SearchResults = () => {
   const searchParams = useSearchParams();
@@ -18,6 +20,12 @@ const SearchResults = () => {
   return (
     <section>
       <div className="py-5 md:py-10 text-gray-700 bg-white min-h-screen">
+      <Link href="/" 
+      className="text"
+      >
+        <button className='flex gap-2 font-bold mb-5 align-center cursor-pointer hover:text-orange-500'><FaArrowRightFromBracket className="rotate-180 text-3xl cursor-pointer hover:text-orange-500 ml-5"/>Back to home</button>
+      </Link> 
+        <p className='ml-2 mb-3 md:ml-40 mt-0'>Searched for: <span className="font-bold underline">{query}</span></p>
         <h1 className="text-3xl text-center text-gray-700 font-bold">Destinations</h1>
         <div className="p-10 flex gap-4 flex-wrap justify-center">
           {filteredDestinations.length > 0 ? (
