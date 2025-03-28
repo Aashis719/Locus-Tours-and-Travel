@@ -45,7 +45,7 @@ export default function Home() {
           </div>
 
           {/* Flight Booking Form */}
-          {/* <FlightBookingForm/> */}
+          {/* <FlightBookingForm/>  */}
          <SearchBox/>
 
         </div>

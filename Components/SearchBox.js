@@ -9,7 +9,7 @@ const SearchBox = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && query.trim()) {
-      router.push(`/search?q=${query}`); // ✅ Redirect to `/search?q=query`
+      router.push(`/search?q=${query}`); // ✅ Redirect to `/search?q=query `
     }
   };
 

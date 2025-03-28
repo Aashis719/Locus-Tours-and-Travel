@@ -157,7 +157,7 @@ const destination=  [
       {
           "image": "https://cdn.pixabay.com/photo/2017/04/20/14/30/beach-2245867_1280.jpg",
           "place": "The Maldives",
-          "location": "Maldives",
+          "location": "Maldives ",
           "price": "Starting at $500"
       },
       {
