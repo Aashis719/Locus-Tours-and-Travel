@@ -51,7 +51,7 @@ const TestimonialSection = () => {
           <ChevronLeft className="w-6 h-6" />
         </button>
 
-        {/* Motion div for sliding effect */}
+        {/* Motion div for sliding effects */}
         <motion.div
           key={index}
           initial={{ opacity: 0, x: 50 }}
